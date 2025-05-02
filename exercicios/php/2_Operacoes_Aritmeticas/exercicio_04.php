@@ -1,0 +1,4 @@
+<?php
+    //  Operações Aritméticas
+    //Exercicio: Operações Simples
+    //Autor: Seu Nome
