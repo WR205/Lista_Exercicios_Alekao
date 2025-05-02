@@ -1,3 +1,7 @@
 //  Laços de Repetição
 //Exercicio: Eleição
-//Autor: Seu Nome
+//Autor: Gabriel Magina Coutinho
+
+//=========================| Código |=========================//
+
+//============================================================//

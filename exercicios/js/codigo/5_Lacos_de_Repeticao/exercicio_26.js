@@ -1,3 +1,7 @@
 //  Laços de Repetição
 //Exercicio: Média de Dez Números
-//Autor: Seu Nome
+//Autor: Gabriel Magina Coutinho
+
+//=========================| Código |=========================//
+
+//============================================================//
