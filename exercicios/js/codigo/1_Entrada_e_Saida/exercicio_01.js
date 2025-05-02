@@ -1,11 +1,19 @@
 //  Entrada e Saída
-//Exercicio: Olá Mundo
+//Exercicio: Mostrar Texto na Tela
 //Autor: Weverton
 
 //=========================| Código |=========================//
 
-const mensagem = document.createElement("h1");
-mensagem.textContent = "Olá Mundo!";
-document.body.appendChild(mensagem);
+const campoMensagem = document.getElementById("mensagem");
+const inputTexto = document.getElementById("texto");
+const mostrarTexto = document.getElementById("mostrarTexto");
+mostrarTexto.addEventListener("click", ()=>{
+    if(inputTexto.value == ""){
+        alert("Insira um Valor!");
+        return;
+    }
+    campoMensagem.innerHTML = `<p>${inputTexto.value}</p>`;
+    inputTexto.value = "";
+});
 
 //============================================================//
