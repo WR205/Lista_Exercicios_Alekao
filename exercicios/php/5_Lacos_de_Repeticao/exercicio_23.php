@@ -1,3 +1,6 @@
+
+<!--  http://localhost:41062/Lista_Exercicios_Alekao/exercicios/php/5_Lacos_de_Repeticao/ -->
+  
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,9 +11,14 @@
 </head>
 <body>
     <?php
-        //  Laços de Repetição
-        //Exercicio: Contagem Regressiva
-        //Autor: Seu Nome
+       $cont = 10;
+       while($cont > 0){
+         echo " detonação em $cont segundos";
+           $cont -= 1;
+           sleep(1);
+       }
+       echo "<h1>ESTOUROU!! </h1>";
+
     ?>
 </body>
 </html>
