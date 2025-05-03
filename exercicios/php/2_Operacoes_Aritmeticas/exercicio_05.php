@@ -10,7 +10,24 @@
     <?php
         //  Operações Aritméticas
         //Exercicio: Prioridades
-        //Autor: Seu Nome
-    ?>
+        //Autor: Pedro
+        
+         
+         $resultado = 5.0 + 4.0 * 2.0;
+         echo "<p>Operação: 5 + 4 * 2 = $resultado</p>";
+ 
+         
+         $resultado = (5.0 + 4.0) * 2.0;
+         echo "<p>Operação: (5 + 4) * 2 = $resultado</p>";
+ 
+        
+         $resultado = 1.0 + 2.0 / 3.0 * 4.0;
+         echo "<p>Operação: 1 + 2 / 3 * 4 = $resultado</p>";
+ 
+         
+         $resultado = (1.0 + 2.0) / (3.0 * 4.0);
+         echo "<p>Operação: (1 + 2) / (3 * 4) = $resultado</p>";
+     ?>
+    
 </body>
 </html>
