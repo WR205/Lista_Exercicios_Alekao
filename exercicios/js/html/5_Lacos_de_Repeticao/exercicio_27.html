@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Exercicio 27 - Soma de Um a X</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+        }
+    </style>
 </head>
 <body>
+
+    <h1>Soma de 1 até X</h1>
+    <p>Informe um número inteiro positivo para calcular a soma de 1 até ele:</p>
+
+    <input type="number" id="numero" placeholder="Digite um número" required>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+
+    <h2 id="resultado"></h2>
+
     <script src="../../codigo/5_Lacos_de_Repeticao/exercicio_27.js"></script>
 </body>
 </html>
