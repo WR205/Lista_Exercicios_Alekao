@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Exercicio 29 - Eleição</title>
+  <meta charset="UTF-8">
+  <title>Exercicio 29 - Eleição</title>
+
 </head>
 <body>
-    <script src="../../codigo/5_Lacos_de_Repeticao/exercicio_29.js"></script>
+
+  <h1>Simulação de Eleição</h1>
+
+  <label for="voto">Escolha seu candidato:</label><br>
+  <select id="voto">
+    <option value="">-- Selecione --</option>
+    <option value="1">1 - Candidato A</option>
+    <option value="2">2 - Candidato B</option>
+    <option value="3">3 - Branco</option>
+    <option value="4">Outro (voto nulo)</option>
+    <option value="0">Encerrar votação</option>
+  </select>
+  <br>
+  <button onclick="votar()">Votar</button>
+
+  <div id="mensagem"></div>
+  <div class="result" id="resultado"></div>
+
+  <script>
+
+  </script>
+
 </body>
+<script src="../../codigo/5_Lacos_de_Repeticao/exercicio_29.js"></script>
 </html>
