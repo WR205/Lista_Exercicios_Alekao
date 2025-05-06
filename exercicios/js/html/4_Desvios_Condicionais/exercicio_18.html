@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../../../css/style.css">
     <title>Exercicio 18 - Média Final</title>
+    <style>
+        p {
+            width: fit-content;
+        }
+    </style>
 </head>
 <body>
     <h1>Média Final</h1>
     <p>Informe suas notas, e será calculada a média delas</p>
     <p>Média: <span id="media"></span></p>
-    <input type="number" id="nota" tabindex="1">
+    <input type="number" id="nota" min="0" max="10" step="0.1" tabindex="1">
     <button onclick="adicionarNota()" tabindex="2">Adicionar Nota</button>
     <script src="../../codigo/4_Desvios_Condicionais/exercicio_18.js"></script>
 </body>

@@ -26,9 +26,24 @@ function adicionarNota(){
     notas.push(inputNota.value);
     //"<p>Nota [Indice]: notas[ultimoValor]</p>(hover:<button>Deletar Elemento</button>)"
     const novaNota = document.createElement("p");
+    const paiNota = document.createElement("div");
+    paiNota.setAttribute("onmouseover", "deletar(event)");
+    paiNota.setAttribute("onmouseleave", "notdeletar(event)");
     novaNota.textContent = "Nota " + (notasTamanho + 1) + ": " + notas[notasTamanho];
-    document.body.appendChild(novaNota);
+    paiNota.appendChild(novaNota);
+    inputNota.parentNode.insertBefore(paiNota, inputNota);
     inputNota.value = "";
+}
+
+function deletar(event){
+    const deletar = document.createElement("button");
+    deletar.textContent = "Deletar";
+    deletar.dataset.ref = event.target;
+    event.target.parentNode.insertBefore(deletar, event.target.nextSibling);
+}
+
+function notdeletar(event){
+    event.target.child.remove();
 }
 
 //============================================================//
