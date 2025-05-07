@@ -4,7 +4,11 @@
 
 //=========================| Código |=========================//
 
+//Objetivo: fazer um calculo de Média dinamico, com adição e deleção de notas dinamicamente
 const notas = [];
+
+const listaNotasElemento = document.getElementById("notas");
+const mediaElemento = document.getElementById("media");
 
 const inputNota = document.getElementById("nota");
 inputNota.addEventListener("keyup", (event)=>{
@@ -12,6 +16,19 @@ inputNota.addEventListener("keyup", (event)=>{
         adicionarNota();
     }
 })
+
+function calcularMedia(){
+    let media = 0;
+    const tamanho = notas.length;
+    notas.forEach(element => {
+        media += element;
+    });
+    media = media/tamanho;
+    if(isNaN(media)){
+        media = 0;
+    }
+    mediaElemento.textContent = media.toFixed(1);
+}
 
 function adicionarNota(){
     if(!inputNota.value){
@@ -22,28 +39,36 @@ function adicionarNota(){
         alert("Só é aceito notas de 0 a 10!");
         return;
     }
-    notasTamanho = notas.length;
-    notas.push(inputNota.value);
-    //"<p>Nota [Indice]: notas[ultimoValor]</p>(hover:<button>Deletar Elemento</button>)"
+    let ultimaPosicao = notas.length;
+    notas[ultimaPosicao] = Number(inputNota.value);
+
     const novaNota = document.createElement("p");
-    const paiNota = document.createElement("div");
-    paiNota.setAttribute("onmouseover", "deletar(event)");
-    paiNota.setAttribute("onmouseleave", "notdeletar(event)");
-    novaNota.textContent = "Nota " + (notasTamanho + 1) + ": " + notas[notasTamanho];
+    const paiNota = document.createElement("li");
+
+    novaNota.innerHTML = "Nota <span class='indice'>" + (ultimaPosicao + 1) + "</span>: " + notas[ultimaPosicao];
+    paiNota.dataset.indice = ultimaPosicao;
     paiNota.appendChild(novaNota);
-    inputNota.parentNode.insertBefore(paiNota, inputNota);
+    listaNotasElemento.appendChild(paiNota);
+
+    const deletar = document.createElement("button");
+    deletar.textContent = "Deletar";
+    deletar.setAttribute('onclick', 'deletar(event)')
+    paiNota.insertBefore(deletar, novaNota.nextSibling);
+    
     inputNota.value = "";
+
+    calcularMedia();
 }
 
 function deletar(event){
-    const deletar = document.createElement("button");
-    deletar.textContent = "Deletar";
-    deletar.dataset.ref = event.target;
-    event.target.parentNode.insertBefore(deletar, event.target.nextSibling);
-}
-
-function notdeletar(event){
-    event.target.child.remove();
+    notas.splice(event.target.parentNode.dataset.indice, 1);
+    event.target.parentNode.remove();
+    const lista = listaNotasElemento.querySelectorAll("li")
+    lista.forEach((element, indice) => {
+        element.dataset.indice = indice;
+        element.querySelector(".indice").textContent = indice + 1;
+    });
+    calcularMedia();
 }
 
 //============================================================//
