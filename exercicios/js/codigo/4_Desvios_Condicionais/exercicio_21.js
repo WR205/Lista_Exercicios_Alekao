@@ -1,6 +1,6 @@
 //  Desvios Condicionais
 //Exercicio: Mini Calculadora
-//Autor: Seu Nome
+//Autor: Weverton
 
 //=========================| Código |=========================//
 
