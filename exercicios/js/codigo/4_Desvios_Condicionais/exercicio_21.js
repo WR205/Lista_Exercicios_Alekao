@@ -6,10 +6,16 @@
 
 const inputNumero = document.getElementById("numero");
 const resultadoElement = document.getElementById("resultado");
+const equacaoElement = document.getElementById("equacao");
+
+inputNumero.addEventListener('keyup', (event)=>{
+    if(event.key == "+" || event.key == "-" || event.key == "*" || event.key == "/"){
+        calculo(event.key);
+    }
+})
 
 let valores = [];
 let equacao;
-
 
 function calculo(operador){
     if(!inputNumero.value){
@@ -17,6 +23,7 @@ function calculo(operador){
         return;
     }
     resultado()
+    equacaoElement.textContent = `${operador}`;
     equacao = operador;
 }
 function soma(){
@@ -55,14 +62,15 @@ function resultado(){
                 divisao();
         }
         valores.pop;
+        equacaoElement.textContent = "";
         resultadoElement.textContent = valores[0];
     }
 }
 
 function limpar(){
-    console.log("oi");
     valores = [];
     equacao = "";
+    equacaoElement.textContent = "";
     resultadoElement.textContent = "";
 }
 
